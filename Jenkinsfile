@@ -5,7 +5,7 @@ node{
 	stage("Maven clean build artifact"){
 		def mavenHome= tool name: "Maven", type: "maven"
 		def command= "${mavenHome}/bin/mvn"
-		sh "${command} clean package"
+		bat "${command} clean package"
 	}
 	stage("Build docker image"){
 		app=docker.build("surjeetproject/test-app")
